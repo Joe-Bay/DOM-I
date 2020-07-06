@@ -41,13 +41,31 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+let nav = document.querySelector('nav');
+
 let allTheNavLinks = document.querySelectorAll("nav a");
+
+
+newContactLink = document.createElement('a');// creating new link for nav
+newContactLink.textContent = 'Contact';
+newContactLink.href = '#';
+nav.appendChild(newContactLink);
+newContactLink.style.color = 'green';
+
+newStoreLink = document.createElement('a');
+newStoreLink.textContent = 'Store';
+newStoreLink.href = '#';
+nav.prepend(newStoreLink);
+newStoreLink.style.color = 'green';
+
 
 allTheNavLinks.forEach(function(){ 
 for(let i = 0; i < allTheNavLinks.length; i++){
 allTheNavLinks[i].textContent = siteContent.nav[`nav-item-${i}`];
+allTheNavLinks[i].style.color = 'green';
 }
 });
+
 
 const mainTitle = document.querySelector('.cta h1');
 mainTitle.textContent = siteContent.cta.h1; 
