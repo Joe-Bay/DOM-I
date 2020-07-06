@@ -40,3 +40,74 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let nav = document.querySelector('nav');
+
+let allTheNavLinks = document.querySelectorAll("nav a");
+
+
+newContactLink = document.createElement('a');// creating new link for nav
+newContactLink.textContent = 'Contact';
+newContactLink.href = '#';
+nav.appendChild(newContactLink);
+newContactLink.style.color = 'green';
+
+newStoreLink = document.createElement('a');
+newStoreLink.textContent = 'Store';
+newStoreLink.href = '#';
+nav.prepend(newStoreLink);
+newStoreLink.style.color = 'green';
+
+
+allTheNavLinks.forEach(function(){ 
+for(let i = 0; i < allTheNavLinks.length; i++){
+allTheNavLinks[i].textContent = siteContent.nav[`nav-item-${i}`];
+allTheNavLinks[i].style.color = 'green';
+}
+});
+
+
+const mainTitle = document.querySelector('.cta h1');
+mainTitle.textContent = siteContent.cta.h1; 
+
+const headingButton = document.querySelector('.cta button');
+headingButton.textContent = siteContent.cta.button;
+
+const mainImage = document.querySelector('#cta-img');
+mainImage.setAttribute('src', siteContent['cta']['img-src']);
+
+// main content 
+const mainContentSubtitles = document.querySelectorAll('.text-content h4');
+
+mainContentSubtitles[0].textContent = siteContent["main-content"]['features-h4'];
+mainContentSubtitles[1].textContent = siteContent["main-content"]['about-h4'];
+mainContentSubtitles[2].textContent = siteContent["main-content"]['services-h4'];
+mainContentSubtitles[3].textContent = siteContent["main-content"]['product-h4'];
+mainContentSubtitles[4].textContent = siteContent["main-content"]['vision-h4'];
+
+const mainContentParagraphs = document.querySelectorAll('.text-content p');
+
+mainContentParagraphs[0].textContent = siteContent["main-content"]['features-content'];
+mainContentParagraphs[1].textContent = siteContent["main-content"]['about-content'];
+mainContentParagraphs[2].textContent = siteContent["main-content"]['services-content'];
+mainContentParagraphs[3].textContent = siteContent["main-content"]['product-content'];
+mainContentParagraphs[4].textContent = siteContent["main-content"]['vision-content'];
+
+const mainContentImage = document.querySelector('#middle-img');
+mainContentImage.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+const contactTitle = document.querySelector('.contact h4');
+contactTitle.textContent = siteContent['contact']['contact-h4'];
+
+const contactSectionPara = document.querySelectorAll('.contact p')
+// setting the contact section because they are all p tags so had to use a collection
+contactSectionPara[0].textContent = siteContent['contact']['address']; 
+contactSectionPara[1].textContent = siteContent['contact']['phone'];
+contactSectionPara[2].textContent = siteContent['contact']['email'];
+
+const copyRightFoot = document.querySelector('footer p');
+copyRightFoot.textContent = siteContent['footer']['copyright'];
+
+
+
+
